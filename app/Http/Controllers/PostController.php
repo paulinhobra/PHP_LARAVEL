@@ -12,4 +12,19 @@ class PostController extends Controller
 
         return view('admin.posts.index', compact('posts'));
     }
+
+    public function create(){
+        return view('admin.posts.create');
+    }
+
+    public function store(Request $req){
+
+      Post::create([
+            'titulo' => $req->title,
+            'conteudo' => $req->content
+        ]);
+        
+        return redirect()->route('posts.index');
+
+    }
 }

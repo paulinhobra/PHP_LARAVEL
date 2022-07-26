@@ -4,3 +4,5 @@
     <h3>{{ $post->titulo }}</h3>
     <p>{{ $post->conteudo }}</p>
 @endforeach
+<hr/>
+<a href="{{ route('posts.create') }}">Cadastrar Post</a>
