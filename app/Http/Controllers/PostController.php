@@ -32,7 +32,12 @@ class PostController extends Controller
 
     public function show($id){
 
-        
+        if(!$post = Post::where('id', $id)->first()){
+            return redirect()->route('posts.index');
+        }
+        dd($post);
+
+        return view('admin.posts.show', compact('post'));
 
     }
 }
