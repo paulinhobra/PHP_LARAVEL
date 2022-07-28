@@ -1,3 +1,9 @@
+@if(session('message'))
+    <div style="color: green">
+        {{ session('message') }}
+    </div>
+@endif
+
 <h1>Posts</h1>
 
 @foreach ($posts as $post)    
