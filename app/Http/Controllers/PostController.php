@@ -56,7 +56,11 @@ class PostController extends Controller
 
     public function edit($id){
 
-        
+        if(!$post = Post::where('id', $id)->first()){
+            return redirect()->back();
+        }
+
+        return view('admin.posts.edit', compact('post'));
 
     }
 }
