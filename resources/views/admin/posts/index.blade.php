@@ -13,3 +13,6 @@
 @endforeach
 <hr/>
 <a href="{{ route('posts.create') }}">Cadastrar Post</a>
+<br/>
+<hr/>
+{{ $posts->links() }}
