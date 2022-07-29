@@ -63,4 +63,21 @@ class PostController extends Controller
         return view('admin.posts.edit', compact('post'));
 
     }
+
+    public function update(StoreUpdatePost $req, $id){
+
+        if(!$post = Post::where('id', $id)->first()){
+            return redirect()->back();
+        }
+
+        $post->update([
+            'titulo' => $req->title,
+            'conteudo' => $req->content
+        ]);
+
+        return redirect()
+                ->route('posts.index')
+                ->with('message', 'Post alterado com sucesso!');
+
+    }
 }

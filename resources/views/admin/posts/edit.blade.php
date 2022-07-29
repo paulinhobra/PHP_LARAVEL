@@ -8,9 +8,10 @@
     </ul>
 @endif
 
-<form action="" method="post">
+<form action="{{ route('posts.update', $post->id) }}" method="post">
 
     @csrf
+    @method('put')
 
     <input type="text" id="title" name="title" placeholder="Título" value="{{ $post->titulo }}">
 
