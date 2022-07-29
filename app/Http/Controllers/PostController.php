@@ -53,4 +53,10 @@ class PostController extends Controller
                 ->with('message', 'Post deletado com sucesso!');
 
     }
+
+    public function edit($id){
+
+        
+
+    }
 }
