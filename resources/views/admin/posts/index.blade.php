@@ -22,4 +22,9 @@
 <a href="{{ route('posts.create') }}">Cadastrar Post</a>
 <br/>
 <hr/>
-{{ $posts->links() }}
+
+@if (isset($filtros))
+    {{ $posts->appends($filtros)->links() }}
+@else
+    {{ $posts->links() }}
+@endif

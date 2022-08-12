@@ -83,11 +83,13 @@ class PostController extends Controller
 
     public function search(Request $req){
 
+        $filtros = $req->except('_token');
+
         $posts = Post::where("titulo", "%{$req->search}%")
                             ->orWhere("conteudo", "LIKE", "%{$req->search}%")
                             ->paginate();
 
-        return view('admin.posts.index', compact('posts'));
+        return view('admin.posts.index', compact('posts', 'filtros'));
 
     }
 }
