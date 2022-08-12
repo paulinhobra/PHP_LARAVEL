@@ -83,7 +83,11 @@ class PostController extends Controller
 
     public function search(Request $req){
 
-        dd("Pesquisando por ". $req->search);
+        $posts = Post::where("titulo", "%{$req->search}%")
+                            ->orWhere("conteudo", "LIKE", "%{$req->search}%")
+                            ->paginate();
+
+        return view('admin.posts.index', compact('posts'));
 
     }
 }
