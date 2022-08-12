@@ -80,4 +80,10 @@ class PostController extends Controller
                 ->with('message', 'Post alterado com sucesso!');
 
     }
+
+    public function search(Request $req){
+
+        dd("Pesquisando por ". $req->search);
+
+    }
 }

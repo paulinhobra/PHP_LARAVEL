@@ -4,8 +4,8 @@
     </div>
 @endif
 
-<form action="" method="post">
-
+<form action="{{ route('posts.search') }}" method="post">
+    @csrf
     <input type="text" name="search" placeholder="Pesquisar:">
     <button type="submit">Pesquisar</button>
 
