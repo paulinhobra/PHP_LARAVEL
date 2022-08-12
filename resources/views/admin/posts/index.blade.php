@@ -4,6 +4,13 @@
     </div>
 @endif
 
+<form action="" method="post">
+
+    <input type="text" name="search" placeholder="Pesquisar:">
+    <button type="submit">Pesquisar</button>
+
+</form>
+
 <h1>Posts</h1>
 
 @foreach ($posts as $post)    
